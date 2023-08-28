@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Format Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 500px;
+            padding: 30px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 100px rgb(54, 150, 255, 0.35);
+            margin: 200px auto;
+            border-radius: 5px;
+
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="email"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Email Format Verification</h2>
+        <form id="emailForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+            <button type="button" id="verifyButton" onclick="validateEmail()">Verify Email</button>
+            <p id="resultMessage"></p>
+        </form>
+    </div>
+
+    <script>
+
+        function validateEmail(){
+            var resultMessage = document.getElementById("resultMessage");
+            var emailInput = document.getElementById("email");
+            var emailValue = emailInput.value.trim();
+            if(isValidEmail(emailValue)){
+                resultMessage.textContent = "Email format is valid!";
+                resultMessage.style.color="green"
+            }
+         else {
+                resultMessage.textContent = "Invalid email format!";
+                resultMessage.style.color = "red";
+            }
+        }
+
+        function isValidEmail(email) {
+            var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9]{4,8}\.[a-zA-Z]{2,4}$/;
+            return emailRegex.test(email);
+        }
+    </script>
+</body>
+</html>

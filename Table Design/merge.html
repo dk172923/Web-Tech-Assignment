@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Merged Cells</title>
+    <style>
+        h1 {
+            text-align: center;
+            color: rgb(25, 32, 220);
+        }
+        table {
+            width: 50%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+            border-bottom: 1px solid black;
+        }
+        .no{
+            border-bottom: 0;
+        }
+        .non{
+            border-top: 0;
+        }
+        .middle{
+            border-bottom: 0;
+        }
+        td{
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Table with Merged Cells</h1>
+    <table border="1">
+        <tr>
+            <th rowspan="2">Gender</th>
+            <th colspan="2">Average</th>
+            <th rowspan="2">RedEyes</th>
+        </tr>
+        <tr>
+            <th>Height</th>
+            <th>Weight</th>
+        </tr>
+        <tr>
+            <td rowspan="4">Male</td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td rowspan="4"></td>
+        </tr>
+        <tr>
+            <td class="non middle"></td>
+            <td class="non middle"></td>
+        </tr>
+        <tr>
+            <td class="non middle"></td>
+            <td class="non middle"></td>
+        </tr>
+        <tr>
+            <td class="non"></td>
+            <td class="non"></td>
+        </tr>
+
+        </tr>
+        <tr>
+            <td rowspan="4">Female</td>
+            <td class="no"></td>
+            <td class="no"></td>
+            <td rowspan="4"></td>
+        </tr>
+        <tr>
+            <td class="non middle"></td>
+            <td class="non middle"></td>
+        </tr>
+        <tr>
+            <td class="non middle"></td>
+            <td class="non middle"></td>
+        </tr>
+        <tr>
+            <td class="non"></td>
+            <td class="non"></td>
+        </tr>
+    </table>
+</body>
+</html> 
